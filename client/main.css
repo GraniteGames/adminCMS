@@ -1,0 +1,40 @@
+/* CSS declarations go here */
+.adminPanel1{
+  background-color: red;
+  color:white;
+
+}
+.adminPanel1 h3{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.adminPanel1 a{
+  color:white;
+  text-decoration:none;
+}
+.adminPanel2{
+  background-color:green;
+  color:white;
+}
+.adminPanel2 h3{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.adminPanel2 a{
+  color:white;
+  text-decoration:none;
+}
+.adminPanel3{
+  background-color:blue;
+  color:white;
+}
+.adminPanel3 h3{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.adminPanel3 a{
+  color:white;
+  text-decoration:none;
+}
