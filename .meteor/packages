@@ -24,3 +24,6 @@ twbs:bootstrap
 useraccounts:bootstrap
 accounts-password
 kadira:flow-router
+aldeed:autoform
+aldeed:collection2
+session

@@ -2,72 +2,66 @@
   {{#if currentUser}}
   <div class=container>
     <h3>This is the Beer Edit Page</h3>
-    <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">Add New Beer</button>
+    <div class='form-group'>
+    <label for='search'>Search for a Beer</label>
+    <input id='search' class="form-control" placeholder="Enter the Beer Name">
+    </div>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalBeerAdd">Add New Beer</button>
     <hr>
-    <ul>
+
     {{#each beers}}
       {{>beer}}
     {{/each}}
-    </ul>
+
   </div>
-  <!-- Need to add a modal for editing a beer-->
+
   <!-- This is a modal for adding a new beer -->
-  <div id="myModal" class="modal fade" role="dialog">
+  <div id="modalBeerAdd" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
-    <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Add a new Beer</h4>
-    </div>
-    <div class="modal-body">
-      <form>
-      <div class="form-group">
-        <label for="inputBeerName">Beer Name</label>
-        <input type="text" name="beerName" class="form-control" id="inputBeerName" placeholder="name">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a new Beer</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Beer" id="insertBeerform" type="insert"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="inputBeerStyle">Beer Style</label>
-        <input type="text" name="beerStyle" class="form-control" id="inputBeerStyle" placeholder="style">
-      </div>
-      <div class="form-group">
-        <label for="inputBeerAbv">ABV</label>
-        <input type="text" name="beerABV" class="form-control" id="inputBeerAbv" placeholder="5.0">
-      </div>
-      <div class="form-group">
-        <label for="inputBeerDesc">Description</label>
-        <textarea class="form-control" name="beerDesc" id="inputBeerDesc" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputFile">Beer Image</label>
-        <input type="file" id="exampleInputFile">
-        <p class="help-block">Example block-level help text here.</p>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="bottleCheck"> Bottle
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="draughtCheck"> Draught
-        </label>
-      </div>
-      <button type="submit" class="btn btn-default beerAdd">Submit</button>
-    </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
-
+  <!-- This is a modal for editing a beer currently on tap -->
+  {{#with beerInfo}}
+  <div id="modalBeerUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Beer</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Beer" doc=this id="updateBeerForm" type="update"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  {{/with}}
   {{else}}
   <h2>404:Access Denied</h2>
   {{/if}}
 </template>
+
+
 <template name="beer">
-  <li>{{name}}</li>
+  <div class="panel panel-info">
+    <div class="panel-body"><h3>{{name}}</h3><h4>{{style}}</h4><p>{{descEN}}</p> <button type="button" class="btn btn-primary editButton" data-toggle="modal" data-target="#modalBeerUpdate">Edit</button><button class="btn btn-danger deleteButton">Delete</button>
+  </div>
+</div>
 </template>
