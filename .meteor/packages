@@ -27,3 +27,5 @@ kadira:flow-router
 aldeed:autoform
 aldeed:collection2
 session
+cfs:standard-packages
+cfs:gridfs

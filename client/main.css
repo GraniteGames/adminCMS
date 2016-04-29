@@ -1,40 +1,87 @@
 /* CSS declarations go here */
+body{
+  background-color: black;
+}
+/*ADMIN STYLES */
+.adminNav{
+  background-color: black;
+  border-color:black;
+}
 .adminPanel1{
-  background-color: red;
-  color:white;
+  background-color: white;
+
 
 }
 .adminPanel1 h3{
   margin-top:50px;
   margin-bottom:50px;
 }
-.adminPanel1 a{
-  color:white;
-  text-decoration:none;
-}
+
 .adminPanel2{
-  background-color:green;
-  color:white;
+  background-color:white;
+
 }
 .adminPanel2 h3{
   margin-top:50px;
   margin-bottom:50px;
 }
 
-.adminPanel2 a{
-  color:white;
-  text-decoration:none;
-}
+
 .adminPanel3{
-  background-color:blue;
-  color:white;
+  background-color:white;
+
 }
 .adminPanel3 h3{
   margin-top:50px;
   margin-bottom:50px;
 }
-
-.adminPanel3 a{
+.whiteText{
   color:white;
-  text-decoration:none;
+}
+
+
+
+/*Splash Screen*/
+.splashBG{
+  background-image:url('splashBG.jpg');
+  min-height:580px;
+  background-position: center;
+}
+.logoText{
+  padding-top:400px;
+  color:white;
+  font-size: 80px;
+}
+.langLink{
+  color:white;
+  font-size: 40px;
+  text-decoration: none;
+  padding:10px;
+}
+.linkBox{
+  margin-top:40px;
+  padding:20px;
+
+}
+/*HomePage Styles*/
+.godSpeedNav{
+  background-color: black;
+  border-color:black;
+}
+/*Live Menu Style*/
+.liveMenu{
+  font-family: 'Architects Daughter', cursive;
+  color:white;
+}
+.liveMenuPanel{
+  background-color: black;
+
+}
+.liveMenuPanel h4{
+  display:inline-block;
+  padding-right:20px;
+}
+.liveMenuPanel h3{
+  display: inline-block;
+  padding-right:20px;
 }

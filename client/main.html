@@ -1,9 +1,28 @@
 <head>
     <title>simple</title>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 </head>
 <template name="mainLayout">
+<body>
+  {{> godSpeedNav}}
+  {{>Template.dynamic template=content}}
+</body>
+</template>
+
+<template name="adminLayout">
 <body>
   {{> adminNav}}
   {{>Template.dynamic template=content}}
 </body>
+</template>
+
+<template name="liveMenuLayout">
+  <body>
+    {{> Template.dynamic template=content}}
+  </body>
+</template>
+<template name="splashLayout">
+  <body class="splashBG">
+    {{> Template.dynamic template=content}}
+  </body>
 </template>
