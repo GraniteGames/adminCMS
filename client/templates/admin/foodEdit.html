@@ -1,0 +1,67 @@
+<template name="foodEdit">
+  {{#if currentUser}}
+  <div class=container>
+    <h3>This is the Food Edit Page</h3>
+    <div class='form-group'>
+    <label for='search'>Search for an Item</label>
+    <input id='search' class="form-control" placeholder="Enter the Item Name">
+    </div>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoodAdd">Add New Item</button>
+    <hr>
+
+    {{#each foods}}
+      {{>food}}
+    {{/each}}
+
+  </div>
+
+  <!-- This is a modal for adding a new item -->
+  <div id="modalFoodAdd" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a new Beer</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Food" id="insertFoodform" type="insert"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- This is a modal for editing a beer currently on tap -->
+  {{#with foodInfo}}
+  <div id="modalFoodUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Food</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Food" doc=this id="updateFoodForm" type="update"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/with}}
+  {{else}}
+  <h2>404:Access Denied</h2>
+  {{/if}}
+</template>
+
+
+<template name="food">
+  <div class="panel panel-info">
+    <div class="panel-body"><h3>{{name}}</h3><h4>{{course}}{{price}}</h4><p>{{descEN}}</p> <button type="button" class="btn btn-primary editButton" data-toggle="modal" data-target="#modalFoodUpdate">Edit</button><button class="btn btn-danger deleteButton">Delete</button>
+  </div>
+</div>
+</template>

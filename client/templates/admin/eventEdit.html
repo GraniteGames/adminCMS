@@ -1,0 +1,66 @@
+<template name="eventEdit">
+  {{#if currentUser}}
+  <div class="container whiteText">
+    <h3>This is the Event/Article Edit Page</h3>
+    <h4>These will be displayed on the events page from newest to oldest</h4>
+    <div class='form-group'>
+    <label for='search'>Search for an Event/Article</label>
+    <input id='search' class="form-control" placeholder="Enter the Beer Name">
+    </div>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalEventAdd">Add New Article</button>
+    <hr>
+
+    {{#each events}}
+      {{>eventEditTemp}}
+    {{/each}}
+
+  </div>
+
+  <!-- This is a modal for adding a new beer -->
+  <div id="modalEventAdd" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a new Article</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Event" id="insertEventform" type="insert"}}
+          <input type="file" name="…" class="myFileInput">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- This is a modal for editing a beer currently on tap -->
+  {{#with eventInfo}}
+  <div id="modalEventUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Event</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Event" doc=this id="updateEventForm" type="update"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/with}}
+  {{else}}
+  <h2>404:Access Denied</h2>
+  {{/if}}
+</template>
+<template name="eventEditTemp">
+  <div class="panel panel-info">
+    <div class="panel-body liveMenuPanel"><h3>{{name}}</h3><h4>{{lastEdited}}</h4><p>{{bodyEN}}</p><button class="btn btn-primary deleteButton">Delete</button><button type="button" class="btn btn-info editButton" data-toggle="modal" data-target="#modalEventUpdate">Edit</button></div>
+</div>
+</template>

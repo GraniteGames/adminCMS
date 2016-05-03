@@ -1,0 +1,15 @@
+<template name="liveMenu">
+  <div class="container liveMenu">
+  <h1 class="text-center">GodSpeed Live Tap List for {{date}}</h1>
+  {{#each beers}}
+    {{>beer}}
+  {{/each}}
+
+</div>
+</template>
+
+<template name="beer">
+  <div class="panel panel-info">
+    <div class="panel-body liveMenuPanel"><h3>{{name}}</h3><h4>{{style}}</h4><h4>${{price}}/{{servingSize}}oz</h4><p>{{descEN}}</p></div>
+</div>
+</template>

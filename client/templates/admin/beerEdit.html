@@ -1,0 +1,65 @@
+<template name="beerEdit">
+  {{#if currentUser}}
+  <div class="container whiteText">
+    <h3>This is the Beer Edit Page</h3>
+    <div class='form-group'>
+    <label for='search'>Search for a Beer</label>
+    <input id='search' class="form-control" placeholder="Enter the Beer Name">
+    </div>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalBeerAdd">Add New Beer</button>
+    <hr>
+
+    {{#each beers}}
+      {{>beerEditTemp}}
+    {{/each}}
+
+  </div>
+
+  <!-- This is a modal for adding a new beer -->
+  <div id="modalBeerAdd" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a new Beer</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Beer" id="insertBeerform" type="insert"}}
+          <input type="file" name="…" class="myFileInput">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- This is a modal for editing a beer currently on tap -->
+  {{#with beerInfo}}
+  <div id="modalBeerUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Beer</h4>
+        </div>
+        <div class="modal-body">
+          {{> quickForm collection="Beer" doc=this id="updateBeerForm" type="update"}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/with}}
+  {{else}}
+  <h2>404:Access Denied</h2>
+  {{/if}}
+</template>
+<template name="beerEditTemp">
+  <div class="panel panel-info">
+    <div class="panel-body liveMenuPanel"><h3>{{name}}</h3><h4>{{style}}</h4><p>${{price}}/{{servingSize}}oz</p><p>{{descEN}}</p><button class="btn btn-primary deleteButton">Delete</button><button type="button" class="btn btn-info editButton" data-toggle="modal" data-target="#modalBeerUpdate">Edit</button></div>
+</div>
+</template>
