@@ -1,5 +1,21 @@
 <template name="beerPage">
   <div class=container>
-  <h1>This is the beer Page</h1>
+  <div class="row"> 
+  <div class="col-md-12 text-center">
+    <h1>Our Beers</h1>
+    <p>Godspeed Brewery's own creations, unique and exciting</p>
+  </div>
+  <div class="col-md-12">
+    {{#each beers}}
+      {{>beerDisplay}}
+    {{/each}}
+    </div>
+  </div>
+  </div>
+</template>
+<template name="beerDisplay">
+  <div class="panel panel-default">
+  <h2>{{name}}</h2><h3>{{style}}</h3>
+  <p>{{descEN}}</p>
   </div>
 </template>

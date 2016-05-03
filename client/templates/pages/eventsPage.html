@@ -1,5 +1,15 @@
 <template name="eventsPage">
   <div class="container">
   <h1>This is the events page</h1>
+  {{#each events}}
+    {{>eventDisplay}}
+  {{/each}}
+    
 </div>
+</template>
+
+<template name="eventDisplay">
+  <h1>{{name}}</h1>
+  <p>{{lastEdited}}</p>
+  <p>{{bodyEN}}</p>
 </template>
