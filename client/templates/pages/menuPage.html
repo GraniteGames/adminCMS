@@ -2,8 +2,14 @@
   <div class=container>
   <h1>This is the menu</h1>
   {{#each foods}}
-      {{>food}}
+      {{>foodPageList}}
     {{/each}}
 
+  </div>
+</template>
+
+<template name="foodPageList">
+  <div class="panel panel-default">
+    <h1>{{name}}</h1>
   </div>
 </template>

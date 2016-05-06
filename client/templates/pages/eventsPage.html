@@ -4,12 +4,14 @@
   {{#each events}}
     {{>eventDisplay}}
   {{/each}}
-    
+
 </div>
 </template>
 
 <template name="eventDisplay">
+  <div class="panel panel-default">
   <h1>{{name}}</h1>
   <p>{{lastEdited}}</p>
   <p>{{bodyEN}}</p>
+</div>
 </template>
