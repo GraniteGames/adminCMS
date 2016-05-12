@@ -63,10 +63,36 @@ body{
   padding:20px;
 
 }
+/*Carousel*/
+.carousel-img{
+  min-width:100%;
+  min-height:100%;
+  max-height:500px;
+}
 /*HomePage Styles*/
+.container-base-style{
+  background-color:rgb(22, 22, 22);
+  color:white;
+}
+.container{
+  padding:0;
+}
+.left-column{
+  border-right: 1px solid white;
+  min-height: 300px;
+}
+.right-column{
+  border-left: 1px solid white;
+  min-height:300px;
+}
+.mid-column{
+  min-height:300px;
+}
 .godSpeedNav{
   background-color: black;
   border-color:black;
+  font-size: 25px;
+  font-weight: bolder;
 }
 /*Live Menu Style*/
 .liveMenu{
