@@ -111,3 +111,8 @@ body{
   display: inline-block;
   padding-right:20px;
 }
+/*Google Map Styles*/
+#map{
+  width:400px;
+  height:400px;
+}

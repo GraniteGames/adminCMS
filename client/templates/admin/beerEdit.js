@@ -23,9 +23,15 @@ Beer.attachSchema(new SimpleSchema({
     label: "Price",
     decimal: true
   },
-  servingSize:{
+  servingSizeBtl:{
     type: Number,
-    label: "Serving Size",
+    label: "Serving Size(Bottle)(ml)",
+    optional:true
+  },
+  servingSizeDft:{
+    type: Number,
+    label: "Serving Size(Draught)(oz)",
+    optional: true
   },
   descFR:{
     type: String,
@@ -57,11 +63,23 @@ Beer.attachSchema(new SimpleSchema({
   },
   bottleCheck:{
     type: Boolean,
-    label: "Available by Bottle"
+    label: "Available by Bottle",
+    optional:true
   },
   draughtCheck:{
     type: Boolean,
-    label:"Available on Tap"
+    label:"Available on Tap",
+    optional: true
+  },
+  fermentingCheck:{
+    type:Boolean,
+    label:"This beer is fermenting",
+    optional:true
+  },
+  conditioningCheck:{
+    type: Boolean,
+    label:"This beer is conditioning",
+    optional:true
   },
   lastEdited:{
     type: Date,
