@@ -62,11 +62,13 @@ Food.attachSchema(new SimpleSchema({
   },
   glutenCheck:{
     type: Boolean,
-    label: "Gluten Free"
+    label: "Gluten Free",
+    optional: true
   },
   vegCheck:{
     type: Boolean,
-    label:"Vegetarian"
+    label:"Vegetarian",
+    optional:true
   },
   lastEdited:{
     type: Date
