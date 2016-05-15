@@ -112,7 +112,10 @@ body{
   padding-right:20px;
 }
 /*Google Map Styles*/
-#map{
-  width:400px;
-  height:400px;
+.map-container {
+  width: 350px;
+  max-width: 100%;
+  height: 350px;
+  margin-left:auto;
+  margin-right:auto;
 }

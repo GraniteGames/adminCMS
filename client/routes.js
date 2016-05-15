@@ -70,3 +70,8 @@ FlowRouter.route('/admin/data',{
     BlazeLayout.render("adminLayout", {content: "siteData"});
   }
 });
+FlowRouter.route('/admin/about',{
+  action: function(){
+    BlazeLayout.render("adminLayout", {content: "aboutEdit"});
+  }
+});

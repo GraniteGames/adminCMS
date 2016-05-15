@@ -1,6 +1,6 @@
 <template name="foodEdit">
   {{#if currentUser}}
-  <div class=container>
+  <div class="container whiteText">
     <h3>This is the Food Edit Page</h3>
     <div class='form-group'>
     <label for='search'>Search for an Item</label>
@@ -61,7 +61,7 @@
 
 <template name="food">
   <div class="panel panel-info">
-    <div class="panel-body"><h3>{{name}}</h3><h4>{{course}}{{price}}</h4><p>{{descEN}}</p> <button type="button" class="btn btn-primary editButton" data-toggle="modal" data-target="#modalFoodUpdate">Edit</button><button class="btn btn-danger deleteButton">Delete</button>
+    <div class="panel-body liveMenuPanel"><h3>{{name}}</h3><h4>{{course}}</h4><h4>{{price}}$</h4><p>{{descEN}}</p> <button type="button" class="btn btn-primary editButton" data-toggle="modal" data-target="#modalFoodUpdate">Edit</button><button class="btn btn-danger deleteButton">Delete</button>
   </div>
 </div>
 </template>
