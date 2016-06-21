@@ -2,9 +2,25 @@
   {{#if currentUser}}
   <div class="container">
     <h2>Edit your Store Hours, your Brewery/Brewer History</h2>
+    {{#each about}}
+      {{>aboutDisplay}}
+    {{/each}}
   </div>
 
   {{else}}
   <h2>Access Denied: Log In</h2>
   {{/if}}
+</template>
+<template name="aboutDisplay">
+  <h1>History:</h1>
+  <p>English:{{bodyEN}}</p>
+  <p>French:{{bodyFR}}</p>
+  <p>Japanese:{{bodyJP}}</p>
+  <h2>Hours</h2>
+  <p>Monday:{{hoursMonday}}</p>
+  <p>Tuesday:{{hoursTuesday}}</p>
+  <p>Wenesday:{{hoursWednesday}}</p>
+  <p>Thursday:{{hoursThursday}}</p>
+  <p>Friday{{hoursFriday}}</p>
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalBeerAdd">Edit Info</button>
 </template>

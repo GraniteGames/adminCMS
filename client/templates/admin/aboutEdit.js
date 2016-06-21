@@ -1,6 +1,8 @@
 About= new Mongo.Collection("about");
 
 About.attachSchema(new SimpleSchema({
+  
+  //Attach about image
   bodyEN: {
     type: String,
     label: "History(EN)",
@@ -32,8 +34,34 @@ About.attachSchema(new SimpleSchema({
     type: Date,
     label:"Date Created/Edited",
 
+  },
+  hoursMonday: {
+    type: String,
+    label: "Monday Hours (X-X)"
+  },
+  hoursTuesday: {
+    type: String,
+    label: "Tuesday Hours (X-X)"
+  },
+  hoursWednesday: {
+    type: String,
+    label: "Wednesday Hours (X-X)"
+  },
+  hoursThursday: {
+    type: String,
+    label: "Thursday Hours (X-X)"
+  },
+  hoursFriday: {
+    type: String,
+    label: "Friday Hours (X-X)"
+  },
+  hoursSaturday: {
+    type: String,
+    label: "Saturday Hours (X-X)"
+  },
+  hoursSunday: {
+    type: String,
+    label: "Sunday Hours (X-X)"
   }
-
-  //Need to put image in here
 }
 ));

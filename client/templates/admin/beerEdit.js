@@ -81,13 +81,13 @@ Beer.attachSchema(new SimpleSchema({
     label:"This beer is conditioning",
     optional:true
   },
-  lastEdited:{
-    type: Date,
-    label:"Date Edited",
-
-  },
-
-
+  retailCheck:{
+    type: Boolean,
+    label:"This beer is available in retail",
+    optional: true
+  }
+  
+  
 }
 ))
 
