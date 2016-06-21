@@ -31,3 +31,4 @@ cfs:standard-packages
 cfs:gridfs
 dburles:google-maps
 ostrio:files
+cfs:filesystem

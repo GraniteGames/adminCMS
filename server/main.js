@@ -7,3 +7,12 @@ About= new Mongo.Collection("about");
 Meteor.startup(() => {
   // code to run on server at startup
 });
+
+Images.allow({
+	'insert': function(){
+			
+			return true;
+		}
+})
+	
+

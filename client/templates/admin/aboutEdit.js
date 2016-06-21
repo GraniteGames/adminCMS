@@ -65,3 +65,18 @@ About.attachSchema(new SimpleSchema({
   }
 }
 ));
+
+Template.aboutEdit.helpers({
+	about: function(){
+		return About.find();
+	},
+	aboutInfo: function(){
+    return Session.get("aboutData");
+  }
+})
+Template.aboutDisplay.events({
+  'click .aboutUp': function(){
+    Session.set('aboutData', this);
+	console.log("Session Set")
+  },
+})
